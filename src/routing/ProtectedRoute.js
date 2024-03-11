@@ -10,7 +10,7 @@ const ProtectedRoute = ({ children }) => {
             console.log("a");
             try {
                 const value = await AsyncStorage.getItem('jwtToken');
-                if (value !== 'null' && value !== 'undefined') {
+                if (value !== null && value !== undefined && value !== 'null' && value !== 'undefined') {
                     console.log(value);
                 } else {
                     navigation.navigate('Login');
